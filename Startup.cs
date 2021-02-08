@@ -34,6 +34,10 @@ namespace ObeSystem
 
             services.AddScoped<IPolistRepository, PolistRepository>();
 
+            services.AddScoped<IModuleRepository, ModuleRepository>();
+
+            services.AddScoped<IAssessmentRepository, AssessmentRepository>();
+
 
             services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("OBEConnection")));
 
@@ -42,6 +46,7 @@ namespace ObeSystem
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
 
             services.AddScoped<IUserService, UserService>();
+
 
 
             services.AddCors(opt =>

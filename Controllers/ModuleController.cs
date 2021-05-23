@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ObeSystem.Application.Modules;
 using ObeSystem.Interfaces;
 using ObeSystem.Models;
 
@@ -13,55 +15,53 @@ namespace ObeSystem.Controllers
     [ApiController]
     public class ModuleController : ControllerBase
     {
+        private readonly IMediator _mediator;
 
-        private readonly IModuleRepository _moduleRepository;
-
-        public ModuleController(IModuleRepository moduleRepository)
+        public ModuleController(IMediator mediator)
         {
-            _moduleRepository = moduleRepository;
+            _mediator = mediator;
         }
 
 
         // GET: api/Module
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Module>>> GetModules()
+        public async Task<ActionResult<List<Module>>> List()
         {
-            var module = await _moduleRepository.GetModuleAsync();
-            return Ok(module);
+            return await _mediator.Send(new List.Query());
+
 
         }
-
-
-        [HttpPost]
-        public ActionResult<Module> CreatePostAsync(Module module)
-        {
-            Module newmodule = _moduleRepository.Add(module);
-            return Ok(newmodule);
-        }
-
-
-        [HttpPut("{id?}")]
-        public ActionResult<Module> UpdateModule(Module module)
-        {
-            Module modulechanges = _moduleRepository.Update(module);
-            return Ok(modulechanges);
-        }
-
-
 
 
         //GET: api/Module/5
         [HttpGet("{id?}")]
-        public async Task<ActionResult<Module>> GetModule(int id)
+        public async Task<ActionResult<Module>> Details(Guid id)
         {
-            return await _moduleRepository.GetModuleByIdAsync(id);
+            return await _mediator.Send(new Details.Query { Id = id });
         }
 
 
-        public ActionResult<Module> DeleteLo(int id)
+        [HttpPost]
+        public async Task<ActionResult<Module>> Create(Create.Command command)
         {
-            Module deletedlist = _moduleRepository.Delete(id);
-            return Ok(deletedlist);
+            return await _mediator.Send(command);
+        }
+
+
+        [HttpPut("{id?}")]
+        public async Task<ActionResult<Module>> Edit(Guid id, Edit.Command command)
+        {
+            command.Id = id;
+            return await _mediator.Send(command);
+        }
+
+
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult<Module>> Delete(Guid id)
+        {
+
+            return await _mediator.Send(new Delete.Command { Id = id });
         }
 
 

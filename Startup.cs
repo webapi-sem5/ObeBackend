@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MediatR;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using ObeSystem.Application.Modules;
+using ObeSystem.Application.Assessments;
 using ObeSystem.Helpers;
 using ObeSystem.Interfaces;
 using ObeSystem.Repository;
@@ -30,16 +33,17 @@ namespace ObeSystem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ILolistRepository, LolistRepository>();
+            //services.AddScoped<ILolistRepository, LolistRepository>();
 
-            services.AddScoped<IPolistRepository, PolistRepository>();
+           // services.AddScoped<IPolistRepository, PolistRepository>();
 
-            services.AddScoped<IModuleRepository, ModuleRepository>();
+            //services.AddScoped<IModuleRepository, ModuleRepository>();
 
-            services.AddScoped<IAssessmentRepository, AssessmentRepository>();
+            //services.AddScoped<IAssessmentRepository, AssessmentRepository>();
 
 
-            services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("OBEConnection")));
+            //services.AddDbContext<AppDbContext>(options => options.UseMySql(Configuration.GetConnectionString("OBEConnection")));
+            services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("OBEConnection")));
 
             services.AddControllers();
 
@@ -56,6 +60,18 @@ namespace ObeSystem
                     policy.AllowAnyHeader().AllowAnyMethod().AllowAnyOrigin();
                 });
             });
+
+            services.AddMediatR(typeof(Application.Modules.List.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Assessments.List.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Assessments.Edit.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Lolists.List.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Polists.List.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Students.List.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Thresholds.List.Handler).Assembly);
+            services.AddMediatR(typeof(Application.Grades.List.Handler).Assembly);
+
+            services.AddAutoMapper(typeof(Application.Assessments.List.Handler));
+
 
 
         }

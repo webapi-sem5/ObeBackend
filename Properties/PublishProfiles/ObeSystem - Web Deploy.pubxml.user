@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit https://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAA96VWoFNpFUitp+ewEOCqMAAAAAACAAAAAAAQZgAAAAEAACAAAAABgLroqMdQAqEhajPsDV6b7szrEMIqI8JUv3FBmC/67gAAAAAOgAAAAAIAACAAAABUZoyUyv9arKjKArVORkQThSLuj6uzSsCGPR17WULeZYAAAADV3LOpbgTMXBIJU0HQ5A/TQpdUk753hyAWsOnnIuxvlLyuj+PiuvPAV1vVpIrCdAWc4Nr4D3NNrbLil0vS0kXfwifZOIdDhRSDkoLbuUZ2lB8fl1mOu7V0mTLqm9VX/KAbC/SMsjWpc2x48sAo0n3z/VyP0Xq1noxsSfnnYw7Fk0AAAADXorsaECzqYhs4TWxvj+hyofIfXAUFWLIuVdDL3ZwcedwL8tSN/gH+K8UbMOZs2Mi7NJJAw8xHIIOyaPyeZtb4</EncryptedPassword>
+  </PropertyGroup>
+  <ItemGroup>
+    <EFMigrations Include="ObeSystem.Repository.AppDbContext">
+      <Value>Data Source=tcp:obesystemdbdbserver.database.windows.net,1433%3bInitial Catalog=obesystemdb%3bUser Id=mfmnufail%40obesystemdbdbserver%3bPassword=0813887112Nn</Value>
+    </EFMigrations>
+  </ItemGroup>
+</Project>

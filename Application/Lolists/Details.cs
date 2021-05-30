@@ -39,6 +39,8 @@ namespace ObeSystem.Application.Lolists
                     .ThenInclude(x => x.Assessment)
                     .Include(x => x.LolistPos)
                     .ThenInclude(x => x.Polist)
+                    .Include(x => x.StudentLolists)
+                    .ThenInclude(x => x.Student)
                     .SingleOrDefaultAsync(c => c.Id == request.Id);
 
                 var lolistToReturn = _mapper.Map<Lolist, LoDto>(lolist);

@@ -1,4 +1,5 @@
-﻿using MediatR;
+﻿using FluentValidation;
+using MediatR;
 using ObeSystem.Models;
 using ObeSystem.Repository;
 using System;
@@ -33,7 +34,18 @@ namespace ObeSystem.Application.Modules
 
             public Guid? GradeId { get; set; }
 
+              
+        }
 
+
+        public class CommandValidator : AbstractValidator<Command>
+        {
+
+            public CommandValidator()
+            {
+
+            RuleFor(x => x.Module_name).NotEmpty();
+            }
         }
 
         public class Handler : IRequestHandler<Command,Module>

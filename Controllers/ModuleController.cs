@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using MediatR;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ObeSystem.Application.Modules;
-using ObeSystem.Interfaces;
 using ObeSystem.Models;
 
 namespace ObeSystem.Controllers
@@ -35,6 +35,7 @@ namespace ObeSystem.Controllers
 
         //GET: api/Module/5
         [HttpGet("{id?}")]
+        [Authorize]
         public async Task<ActionResult<Module>> Details(Guid id)
         {
             return await _mediator.Send(new Details.Query { Id = id });

@@ -26,5 +26,7 @@ namespace ObeSystem.Application.Students
         public float Student_marks { get; set; }
 
         public bool Status { get; set; }
+
+        public Guid? ModuleId { get; set; }
     }
 }

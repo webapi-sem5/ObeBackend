@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\main\\ObeSystem\\ObeSystem.csproj": {}
+    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj": {}
   },
   "projects": {
-    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\main\\ObeSystem\\ObeSystem.csproj": {
+    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\main\\ObeSystem\\ObeSystem.csproj",
+        "projectUniqueName": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj",
         "projectName": "ObeSystem",
-        "projectPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\main\\ObeSystem\\ObeSystem.csproj",
+        "projectPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj",
         "packagesPath": "C:\\Users\\mfmnu\\.nuget\\packages\\",
-        "outputPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\main\\ObeSystem\\obj\\",
+        "outputPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mfmnu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -44,6 +44,14 @@
               "target": "Package",
               "version": "[8.1.1, )"
             },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
+            "FluentValidation.AspNetCore": {
+              "target": "Package",
+              "version": "[10.1.0, )"
+            },
             "MediatR.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -51,6 +59,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[3.1.6, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.0, )"
             },
             "Microsoft.AspNetCore.Mvc.Abstractions": {
               "target": "Package",
@@ -70,6 +82,10 @@
               "target": "Package",
               "version": "[5.0.0, )"
             },
+            "Microsoft.EntityFrameworkCore.Sqlite": {
+              "target": "Package",
+              "version": "[3.1.13, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -88,9 +104,13 @@
               "target": "Package",
               "version": "[7.10.1, )"
             },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.0-alpha.1, )"
+            },
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
-              "version": "[6.8.0, )"
+              "version": "[6.11.1, )"
             }
           },
           "imports": [

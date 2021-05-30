@@ -2,7 +2,7 @@
   "dependencies": {
     "mssql1": {
       "restored": true,
-      "restoreTime": "2021-05-25T09:31:11.5066952Z"
+      "restoreTime": "2021-05-29T20:16:59.0187156Z"
     }
   },
   "parameters": {
@@ -14,7 +14,7 @@
     "mssql1.resourceGroupName": {
       "Name": "mssql1.resourceGroupName",
       "Type": "resourceGroup",
-      "Value": "systemApi"
+      "Value": "ObeSystemRG"
     }
   }
 }

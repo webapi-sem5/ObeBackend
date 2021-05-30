@@ -1,7 +1,7 @@
 {
   "dependencies": {
     "mssql1": {
-      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourcegroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/obesystemdbdbserver/databases/obesystemdb",
+      "resourceId": "/subscriptions/[parameters('subscriptionId')]/resourceGroups/[parameters('resourceGroupName')]/providers/Microsoft.Sql/servers/obesystemdbdbserver/databases/ObeSystemdb",
       "type": "mssql.azure",
       "connectionId": "OBEConnection",
       "secretStore": "AzureAppSettings"

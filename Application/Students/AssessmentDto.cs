@@ -18,5 +18,7 @@ namespace ObeSystem.Application.Students
         public int Marks { get; set; }
 
         public int Student_marks { get; set; }
+
+        public Guid? ModuleId { get; set; }
     }
 }

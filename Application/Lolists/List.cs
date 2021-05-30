@@ -35,6 +35,8 @@ namespace ObeSystem.Application.Lolists
                     .ThenInclude(x => x.Assessment)
                     .Include(x => x.LolistPos)
                     .ThenInclude(x => x.Polist)
+                    .Include(x => x.StudentLolists)
+                    .ThenInclude(x => x.Student)
                     .ToListAsync();
 
                 return _mapper.Map<List<Lolist>, List<LoDto>>(lolists);

@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using ObeSystem.Models;
 using System;
 using System.Collections.Generic;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ObeSystem.Repository
 {
-    public class AppDbContext : DbContext
+    public class AppDbContext : IdentityDbContext<AppUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -19,7 +20,7 @@ namespace ObeSystem.Repository
 
         public DbSet<Polist> Polists { get; set; }
 
-        public DbSet<User> Users { get; set; }
+       
         public DbSet<Module> Modules { get; set; }
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Threshold> Thresholds { get; set; }
@@ -43,7 +44,7 @@ namespace ObeSystem.Repository
 
         protected override void OnModelCreating(ModelBuilder builder)
         {
-            
+            base.OnModelCreating(builder);
 
 
             builder.Entity<AssessmentLo>(x => x.HasKey(ua =>

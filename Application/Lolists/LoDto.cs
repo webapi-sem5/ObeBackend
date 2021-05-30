@@ -30,7 +30,15 @@ namespace ObeSystem.Application.Lolists
         public Module Module { get; set; }
 
         [JsonPropertyName("polist")]
-        public ICollection<PolistDto> LolistPos { get; set; }
+        public ICollection<PolistDto> LolistPos { get; set; }  
+        
+        [JsonPropertyName("assessment")]
+        public ICollection<AssessmentDto> AssessmentLos { get; set; }   
+        
+        [JsonPropertyName("student")]
+        public ICollection<StudentDto> StudentLolists { get; set; }
+
+
 
     }
 }

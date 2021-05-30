@@ -6,7 +6,6 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ObeSystem.Application.Lolists;
-using ObeSystem.Interfaces;
 using ObeSystem.Models;
 
 namespace ObeSystem.Controllers

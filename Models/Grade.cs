@@ -11,9 +11,16 @@ namespace ObeSystem.Models
     {
         public Guid Id { get; set; }
 
-        public int Lower_marks { get; set; }
-
-        public int Higher_marks { get; set; }
+        public int AplusMarks { get; set; }
+        public int AMarks { get; set; }
+        public int AminMarks { get; set; }
+        public int BpluseMarks { get; set; }
+        public int BMarks { get; set; }
+        public int BminMarks { get; set; }
+        public int CpluseMarks { get; set; }
+        public int CMarks { get; set; }
+        public int CminMarks { get; set; }
+        public int EMarks { get; set; }
 
         public string Grade_type { get; set; }
 

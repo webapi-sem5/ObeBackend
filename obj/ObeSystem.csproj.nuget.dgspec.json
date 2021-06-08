@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj": {}
+    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Original\\server\\ObeSystem.csproj": {}
   },
   "projects": {
-    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj": {
+    "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Original\\server\\ObeSystem.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj",
+        "projectUniqueName": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Original\\server\\ObeSystem.csproj",
         "projectName": "ObeSystem",
-        "projectPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\ObeSystem.csproj",
+        "projectPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Original\\server\\ObeSystem.csproj",
         "packagesPath": "C:\\Users\\mfmnu\\.nuget\\packages\\",
-        "outputPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Hosting\\server\\obj\\",
+        "outputPath": "E:\\Semester 5\\Software Project EE5206\\Outcome based Education\\Github\\Original\\server\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\mfmnu\\AppData\\Roaming\\NuGet\\NuGet.Config",

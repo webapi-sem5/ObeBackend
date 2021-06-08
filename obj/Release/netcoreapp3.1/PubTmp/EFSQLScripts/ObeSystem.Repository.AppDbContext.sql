@@ -11,7 +11,7 @@ GO
 BEGIN TRANSACTION;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetRoles] (
         [Id] nvarchar(450) NOT NULL,
@@ -23,7 +23,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetUsers] (
         [Id] nvarchar(450) NOT NULL,
@@ -47,12 +47,20 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Grades] (
         [Id] uniqueidentifier NOT NULL,
-        [Lower_marks] int NOT NULL,
-        [Higher_marks] int NOT NULL,
+        [AplusMarks] int NOT NULL,
+        [AMarks] int NOT NULL,
+        [AminMarks] int NOT NULL,
+        [BpluseMarks] int NOT NULL,
+        [BMarks] int NOT NULL,
+        [BminMarks] int NOT NULL,
+        [CpluseMarks] int NOT NULL,
+        [CMarks] int NOT NULL,
+        [CminMarks] int NOT NULL,
+        [EMarks] int NOT NULL,
         [Grade_type] nvarchar(max) NULL,
         [Gpa] real NOT NULL,
         CONSTRAINT [PK_Grades] PRIMARY KEY ([Id])
@@ -60,7 +68,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Students] (
         [Id] uniqueidentifier NOT NULL,
@@ -73,7 +81,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Thresholds] (
         [Id] uniqueidentifier NOT NULL,
@@ -90,7 +98,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetRoleClaims] (
         [Id] int NOT NULL IDENTITY,
@@ -103,7 +111,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetUserClaims] (
         [Id] int NOT NULL IDENTITY,
@@ -116,7 +124,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetUserLogins] (
         [LoginProvider] nvarchar(450) NOT NULL,
@@ -129,7 +137,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetUserRoles] (
         [UserId] nvarchar(450) NOT NULL,
@@ -141,7 +149,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AspNetUserTokens] (
         [UserId] nvarchar(450) NOT NULL,
@@ -154,7 +162,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Modules] (
         [Id] uniqueidentifier NOT NULL,
@@ -172,7 +180,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Assessments] (
         [Id] uniqueidentifier NOT NULL,
@@ -187,7 +195,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Lolists] (
         [Id] uniqueidentifier NOT NULL,
@@ -202,7 +210,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [Polists] (
         [Id] uniqueidentifier NOT NULL,
@@ -217,7 +225,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AssessmentStudents] (
         [StudentId] uniqueidentifier NOT NULL,
@@ -230,7 +238,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [AssessmentLos] (
         [LolistId] uniqueidentifier NOT NULL,
@@ -242,7 +250,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [StudentLolists] (
         [LolistId] uniqueidentifier NOT NULL,
@@ -255,7 +263,7 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE TABLE [LolistPos] (
         [LolistId] uniqueidentifier NOT NULL,
@@ -267,132 +275,106 @@ BEGIN
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_AspNetRoleClaims_RoleId] ON [AspNetRoleClaims] ([RoleId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     EXEC(N'CREATE UNIQUE INDEX [RoleNameIndex] ON [AspNetRoles] ([NormalizedName]) WHERE [NormalizedName] IS NOT NULL');
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_AspNetUserClaims_UserId] ON [AspNetUserClaims] ([UserId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_AspNetUserLogins_UserId] ON [AspNetUserLogins] ([UserId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_AspNetUserRoles_RoleId] ON [AspNetUserRoles] ([RoleId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [EmailIndex] ON [AspNetUsers] ([NormalizedEmail]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     EXEC(N'CREATE UNIQUE INDEX [UserNameIndex] ON [AspNetUsers] ([NormalizedUserName]) WHERE [NormalizedUserName] IS NOT NULL');
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_AssessmentLos_AssessmentId] ON [AssessmentLos] ([AssessmentId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_Assessments_ModuleId] ON [Assessments] ([ModuleId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_AssessmentStudents_StudentId] ON [AssessmentStudents] ([StudentId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_LolistPos_PolistId] ON [LolistPos] ([PolistId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_Lolists_ModuleId] ON [Lolists] ([ModuleId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_Modules_GradeId] ON [Modules] ([GradeId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_Modules_ThresholdId] ON [Modules] ([ThresholdId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_Polists_ModuleId] ON [Polists] ([ModuleId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     CREATE INDEX [IX_StudentLolists_LolistId] ON [StudentLolists] ([LolistId]);
 END;
 GO
 
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200455_initial')
+IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210608155933_initial')
 BEGIN
     INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20210529200455_initial', N'5.0.1');
-END;
-GO
-
-COMMIT;
-GO
-
-BEGIN TRANSACTION;
-GO
-
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529200647_in')
-BEGIN
-    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20210529200647_in', N'5.0.1');
-END;
-GO
-
-COMMIT;
-GO
-
-BEGIN TRANSACTION;
-GO
-
-IF NOT EXISTS(SELECT * FROM [__EFMigrationsHistory] WHERE [MigrationId] = N'20210529202046_new')
-BEGIN
-    INSERT INTO [__EFMigrationsHistory] ([MigrationId], [ProductVersion])
-    VALUES (N'20210529202046_new', N'5.0.1');
+    VALUES (N'20210608155933_initial', N'5.0.1');
 END;
 GO
 

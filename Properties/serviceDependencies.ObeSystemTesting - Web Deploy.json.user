@@ -2,19 +2,19 @@
   "dependencies": {
     "mssql1": {
       "restored": true,
-      "restoreTime": "2021-06-08T16:17:55.8192596Z"
+      "restoreTime": "2021-06-08T14:30:57.26938Z"
     }
   },
   "parameters": {
     "mssql1.subscriptionId": {
       "Name": "mssql1.subscriptionId",
       "Type": "subscription",
-      "Value": "aaa7ebbf-5a6b-4f4e-91b5-847af2c282be"
+      "Value": "cdec32c9-8d9b-434b-b4bd-d03bf0a3d06f"
     },
     "mssql1.resourceGroupName": {
       "Name": "mssql1.resourceGroupName",
       "Type": "resourceGroup",
-      "Value": "ObeSystemRG"
+      "Value": "nafRG"
     }
   }
 }

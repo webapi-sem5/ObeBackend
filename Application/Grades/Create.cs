@@ -15,9 +15,17 @@ namespace ObeSystem.Application.Grades
         {
             public Guid Id { get; set; }
 
-            public int Lower_marks { get; set; }
 
-            public int Higher_marks { get; set; }
+            public int AplusMarks { get; set; }
+            public int AMarks { get; set; }
+            public int AminMarks { get; set; }
+            public int BpluseMarks { get; set; }
+            public int BMarks { get; set; }
+            public int BminMarks { get; set; }
+            public int CpluseMarks { get; set; }
+            public int CMarks { get; set; }
+            public int CminMarks { get; set; }
+            public int EMarks { get; set; }
 
             public string Grade_type { get; set; }
 
@@ -40,8 +48,17 @@ namespace ObeSystem.Application.Grades
                 var grade = new Grade
                 {
                     Id = request.Id,
-                    Lower_marks = request.Lower_marks,
-                    Higher_marks = request.Higher_marks,
+                    AplusMarks = request.AplusMarks,
+                    AMarks = request.AMarks,
+                    AminMarks = request.AminMarks ,
+                    BpluseMarks = request.BpluseMarks ,
+                    BMarks = request.BMarks ,
+                    BminMarks = request.BminMarks ,
+                    CpluseMarks = request.CpluseMarks ,
+                    CMarks = request.CMarks ,
+                    CminMarks = request.CminMarks ,
+                    EMarks = request.EMarks ,
+
                     Grade_type = request.Grade_type,
                     Gpa = request.Gpa
 

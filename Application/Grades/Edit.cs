@@ -16,9 +16,17 @@ namespace ObeSystem.Application.Grades
         {
             public Guid Id { get; set; }
 
-            public int? Lower_marks { get; set; }
 
-            public int? Higher_marks { get; set; }
+            public int? AplusMarks { get; set; }
+            public int? AMarks { get; set; }
+            public int? AminMarks { get; set; }
+            public int? BpluseMarks { get; set; }
+            public int? BMarks { get; set; }
+            public int? BminMarks { get; set; }
+            public int? CpluseMarks { get; set; }
+            public int? CMarks { get; set; }
+            public int? CminMarks { get; set; }
+            public int? EMarks { get; set; }
 
             public string Grade_type { get; set; }
 
@@ -42,8 +50,16 @@ namespace ObeSystem.Application.Grades
                 if (grade == null)
                     throw new Exception("Could not find grade");
 
-                grade.Lower_marks = request.Lower_marks ?? grade.Lower_marks;
-                grade.Higher_marks = request.Higher_marks ?? grade.Higher_marks;
+                grade.AplusMarks = request.AplusMarks ?? grade.AplusMarks;
+                grade.AMarks = request.AMarks ?? grade.AMarks;
+                grade.AminMarks = request.AminMarks ?? grade.AminMarks;
+                grade.BpluseMarks = request.BpluseMarks ?? grade.BpluseMarks;
+                grade.BMarks = request.BMarks ?? grade.BMarks;
+                grade.BminMarks = request.BminMarks ?? grade.BminMarks;
+                grade.CpluseMarks = request.CpluseMarks ?? grade.CpluseMarks;
+                grade.CMarks = request.CMarks ?? grade.CMarks;
+                grade.CminMarks = request.CminMarks ?? grade.CminMarks;
+                grade.EMarks = request.EMarks ?? grade.EMarks;
                 grade.Grade_type = request.Grade_type ?? grade.Grade_type;
                 grade.Gpa = request.Gpa ?? grade.Gpa;
 

@@ -32,6 +32,11 @@ namespace ObeSystem.Application.Modules
 
             public Guid? ThresholdId { get; set; }
 
+            public Threshold Threshold { get; set; }
+
+            public Guid? GradeId { get; set; }
+            public Grade Grade { get; set; }
+
         }
 
         public class Handler : IRequestHandler<Command, Module>
@@ -56,8 +61,20 @@ namespace ObeSystem.Application.Modules
                 module.Semester = request.Semester ?? module.Semester;
                 module.Lecturer = request.Lecturer ?? module.Lecturer;
                 module.Date = request.Date ?? module.Date;
+                module.GradeId = request.GradeId ?? module.GradeId;
                 module.ThresholdId = request.ThresholdId;
                 module.Threshold = newThreshold;
+                if(request.GradeId != null)
+                {
+                 var newGrade = _context.Grades.SingleOrDefault(c => c.Id == request.GradeId);
+                 module.Grade = newGrade;
+
+                }
+                else
+                {
+                    module.GradeId = null;
+                }
+
 
                 var success = await _context.SaveChangesAsync() > 0;
 
